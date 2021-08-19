@@ -4,7 +4,7 @@
 
 Name:           texlive-split-b
 Version:        %{tl_version}
-Release:        24
+Release:        25
 Epoch:          8
 Summary:        TeX formatting system
 License:        Artistic 2.0 and GPLv2 and GPLv2+ and LGPLv2+ and LPPL and MIT and Public Domain and UCD and Utopia
@@ -172,7 +172,6 @@ Source0577:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/t
 Source0578:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/babel-turkish.doc.tar.xz
 Source0580:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/babel-ukrainian.tar.xz
 Source0581:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/babel-ukrainian.doc.tar.xz
-Source0583:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/babel-vietnamese.tar.xz
 Source0585:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/babel-welsh.tar.xz
 Source0586:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/babel-welsh.doc.tar.xz
 Source0588:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/background.tar.xz
@@ -3224,21 +3223,6 @@ AutoReqProv:    No
 %description -n texlive-babel-ukrainian-doc
 Documentation for babel-ukrainian
 
-%package -n texlive-babel-vietnamese
-Provides:       tex-babel-vietnamese = %{tl_version}
-License:        LPPL 1.3
-Summary:        Babel support for typesetting Vietnamese
-Version:        svn39246
-
-Requires:       texlive-base, texlive-kpathsea-bin, tex-kpathsea
-
-Requires:       tex(vncaps.tex), tex(vncaps.tex)
-Provides:       tex(vietnam.ldf) = %{tl_version}, tex(vietnamese.ldf) = %{tl_version}
-
-%description -n texlive-babel-vietnamese
-The package provides the language definition file for support
-of Vietnamese in babel.
-
 %package -n texlive-babel-welsh
 Provides:       tex-babel-welsh = %{tl_version}
 License:        LPPL 1.3
@@ -5909,10 +5893,6 @@ rm -f %{buildroot}%{_datadir}/texlive/texmf-dist/tlpkg/tlpobj/*
 %files -n texlive-babel-ukrainian-doc
 %{_texdir}/texmf-dist/doc/generic/babel-ukrainian/
 
-%files -n texlive-babel-vietnamese
-%license lppl1.3.txt
-%{_texdir}/texmf-dist/tex/generic/babel-vietnamese/
-
 %files -n texlive-babel-welsh
 %license lppl1.3.txt
 %{_texdir}/texmf-dist/tex/generic/babel-welsh/
@@ -6217,6 +6197,9 @@ rm -f %{buildroot}%{_datadir}/texlive/texmf-dist/tlpkg/tlpobj/*
 
 
 %changelog
+* Thu Aug 19 2021 sunguoshuai <sunguoshuai@huawei.com> - 8:2018-25
+- Del texlive-babel-vietnamese who requires texlive-vntex
+
 * Wed May 19 2021 maminjie <maminjie1@huawei.com> - 8:2018-24
 - split texlive
 
